@@ -1,4 +1,5 @@
 <?php
+  require 'auto.php';
   class Leaseauto extends Auto
   {
     public $leaseMaatschappij;
@@ -7,9 +8,15 @@
 
     private $laatsteOnderhoud;
 
-    public function doeOnderhoud($datum)
+    public function doeOnderhoud($datum = "")
     {
-      $datum = strtotime($datum);
+      if ($datum > 0)
+      {
+        $datum = date("Y-m-d", strtotime($datum));
+
+        $this->laatsteOnderhoud = $datum;
+      }
+      $datum = getdate();
 
       $this->laatsteOnderhoud = $datum;
     }
