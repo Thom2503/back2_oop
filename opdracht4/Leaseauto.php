@@ -15,17 +15,14 @@
 
     public function doeOnderhoud($datum = null)
     {
-      if (!$datum)
+      if ($datum != null)
       {
         $datum = date("Y-m-d", strtotime($datum));
-
-        $this->laatsteOnderhoud = $datum;
       } else
       {
         $datum = date("Y-m-d");
-
-        $this->laatsteOnderhoud = $datum;
       }
+      return $this->laatsteOnderhoud = "{$datum}";
     }
 
   }
