@@ -15,8 +15,10 @@
     public function __construct($merk, $type, $kleur, $tankInhoud, $verbruik, $kenteken, $benzine = 0, $kilometers = 0, $heeftTrekhaak = false)
     {
       //de tellers op nul
-      $this->kilometers = 0;
-      $this->benzine = 0;
+      //$this->kilometers = 0;
+      //$this->benzine = 0;
+      $this->kilometers = $kilometers;
+      $this->benzine = $benzine;
 
       //sla de parameters op
       $this->merk = $merk;
